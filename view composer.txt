@@ -1,0 +1,104 @@
+kabir
+(4:21:41 PM) view()->composer('*' is emulating view()->share
+(4:22:15 PM) view()->composer('*', function($view) {
+     $view->with([
+        'for' => 'bar',
+        'bing' => 'bang'
+     ]);
+});
+
+rasel
+(4:22:19 PM) ar view share a callback nai .... view composer a ace
+
+kabir
+(4:22:27 PM) view()->share([
+    'for' => 'bar',
+    'bing' => 'bang'
+});
+
+rasel
+(4:22:58 PM) with ta kemne kaj kortace
+(4:23:01 PM) ??
+
+kabir
+(4:23:05 PM) hmm kaj eki but view composer er subidha hocce call back or vitore abar kono condition die then return korte paren
+(4:23:17 PM) but view share e sudhu variable ta pass kora jai
+
+rasel
+(4:23:45 PM) with ta kemne kaj kore  with diye ki session a raikha dei
+(4:23:46 PM) ?
+
+kabir
+(4:24:07 PM) with die variable pathano jai controller theke compact er jaigai with o use kora jai
+(4:24:26 PM) aro ekta ki jeno ase 3 vabe view te variable pathano jai
+(4:24:38 PM) compact,with
+
+rasel
+(4:25:02 PM) view er modde array key value pair a ...
+(4:25:29 PM) jemon view('index',['orko'=>3]);
+
+kabir
+(4:25:53 PM) return view('greeting', ['name' => 'James']);
+
+rasel
+(4:26:03 PM) ha vai 
+(4:26:40 PM) jak bepar ta clear hoilo 
+(4:26:41 PM) 
+
+kabir
+(4:28:26 PM) return view('welcome')->with('title','My App');
+(4:28:37 PM) evabe with diao pathano jai
+(4:30:26 PM) view share array akar multiple value dea jai
+(4:31:00 PM) ekhon view::composer ar creator er difference bolen
+
+rasel
+(4:31:27 PM) oita view facade diye kaj kore ar eta helper view diye kaj kore
+(4:31:28 PM) )
+(4:31:29 PM) 
+
+kabir
+(4:32:06 PM) 2 tar e to staic method ase view class er
+(4:32:30 PM) 1 ta render er somoi run hoi ar arekta instiate er somoi
+
+rasel
+(4:32:46 PM) view::creator ace naki ??
+(4:32:47 PM) 
+
+kabir
+(4:32:57 PM) hmm
+
+rasel
+(4:33:17 PM) creator ki intanate er somoy run hoi 
+(4:33:18 PM) ?
+
+kabir
+(4:37:25 PM) hmm
+(4:37:57 PM) View composers are callbacks or class methods that are called when a view is rendered. If you have data that you want bound to a given view each time that view is rendered throughout your application, a view composer can organize that code into a single location. Therefore, view composers may function like "view models" or "presenters".
+(4:38:11 PM) View creators work almost exactly like view composers; however, they are fired immediately when the view is instantiated. To register a view creator, simple use the creator method
+(4:38:32 PM) na bujhle boilen practical example ase
+
+rasel
+(4:38:41 PM) ore vai buji na banglai bujhai diye jan 
+(4:38:49 PM) ami english a durbol
+(4:38:51 PM) 
+
+kabir
+(4:39:08 PM) View::creator('layout', function($view) {
+    $view->with('foo', 'bar');
+});
+
+// in controller
+return View::make('layout')->with('foo', 'not bar at all');
+
+// it's defined as 'not bar at all' in the view
+-
+
+View::composer('hello', function($view) {
+    $view->with('foo', 'bar');
+});
+
+// in controller
+return View::make('hello')->with('foo', 'not bar at all');
+
+// it's defined as 'bar' in the view
+(4:39:17 PM) eita dekhen ebar bujhben
