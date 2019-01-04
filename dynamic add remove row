@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Try jQuery Online</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+   $("em").addClass("selected");
+   $("#myid").addClass("highlight");
+});
+
+</script>
+<style>
+input{
+    height:10%;
+}
+a{  font-size:25px;
+    text-decoration:none;
+}
+.add{
+    color:green;
+}
+.rm{
+    padding-left:15px;
+    color :red;
+}
+.selected { 
+    color:red; 
+}
+.highlight { 
+    background:yellow; 
+}
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+    <table class="table">
+        <thead>
+         <tr> <td> hi</td> <td> hello</td> <td> action</td> </tr>
+        </thead>
+        <tbody id="body">
+            <tr><td><input type="text"></td><td><input type="text"></td><td><a href="#" class="add">+</a><a href="#" class="rm">-</a> </td></tr>
+            
+            
+        </tbody>
+        
+    </table>
+    <button id="btn">find row</button>
+    
+<script >
+   $(function(){
+
+       
+       var add='<tr><td><input type="text"></td><td> <input type="text"></td>';
+       add +='<td>';
+       add += '<a href="#" class="add">+</a><a href="#" class="rm">-</a>';
+      $(document).on('click','.add',function(){
+          $(this).closest('tbody').append(add);
+      });
+      
+      
+      $(document).on('click','.rm',function(){
+           
+           if(($('tbody tr').length)>1){
+          $(this).closest('tr').remove();}
+          
+          
+      });
+       
+       $('#btn').click(function(){
+           alert('hi');
+       })
+   });
+    
+    
+    
+    
+    
+    
+    
+</script>
+</body>
+</html>
