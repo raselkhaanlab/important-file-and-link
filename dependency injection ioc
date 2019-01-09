@@ -1,0 +1,15 @@
+http://php-di.org/doc/understanding-di.html
+https://medium.com/tech-tajawal/dependency-injection-di-container-in-php-a7e5d309ccc6
+https://code.tutsplus.com/tutorials/dependency-injection-in-php--net-28146
+
+laravel dependency inject
+https://gist.github.com/davejamesmiller/bd857d9b0ac895df7604dd2e63b23afe
+https://stackoverflow.com/questions/35011364/using-dependency-injection-over-laravel-facades
+https://medium.com/devcupboard/a-different-view-on-dependency-injection-in-laravel-c01ec690d9ee
+
+
+ioc
+https://medium.com/@NahidulHasan/laravel-ioc-container-why-we-need-it-and-how-it-works-a603d4cef10f
+https://www.reddit.com/r/PHP/comments/394xwq/injecting_an_object_from_the_ioc_using_laravel/
+https://code.tutsplus.com/tutorials/digging-in-to-laravels-ioc-container--cms-22167
+https://www.appnovation.com/blog/laravel-ioc-container-and-dependency-injection
